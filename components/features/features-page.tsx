@@ -3,7 +3,9 @@ import { featuresContent } from '@/data';
 import { FeatureContentInterface } from '@/models/types';
 import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react'
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import { FaCircleCheck } from 'react-icons/fa6';
 
 interface TabOption {
   id: number;
@@ -51,6 +53,8 @@ const Features = () => {
     setCurrentContent(featuresContent.find((item) => item.id === activeTab.id) || featuresContent[0]);
   }, [activeTab]);
 
+  const [loading, setLoading] = useState<boolean>(true);
+
   return (
     <div>
       <div className='layout-narrow pt-16 md:pt-20 lg:pt-24 xl:pt-28'>
@@ -95,26 +99,36 @@ const Features = () => {
           </button>
         </div>
         <div className='mt-5 md:mt-6 xl:mt-8 border border-slate-200 bg-slate-50 rounded-lg px-5 py-6 md:px-6 md:py-8 xl:px-8 xl:py-10'>
-          <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-y-8'>
-            <div>
-              <h3 className='text-slate-950 text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-TT-firs font-bold leading-[1.2]'>
+          <div className='w-full flex flex-col-reverse md:flex-row gap-y-8 gap-x-8'>
+            <div className='w-full'>
+              <h3 className='text-slate-950 text-lg md:text-xl xl:text-2xl font-TT-firs font-bold leading-[1.3]'>
                 {currentContent?.title}
               </h3>
               <ul className='mt-4 md:mt-5 xl:mt-6'>
                 {currentContent?.description.map((item, index) => (
-                  <li key={index} className='text-slate-600 text-base md:text-lg font-medium leading-normal'>
-                    <span className='text-primary font-bold'>{item.title}</span>
-                    {item.description}
+                  <li key={index} className='text-slate-600 '>
+                    <FaCircleCheck className='text-primary inline mr-3' />
+                    {/* <span className='text-primary font-bold'>{item.title}</span> */}
+                    <span className='inline text-base md:text-lg'>
+                      {item.description}
+                    </span>
                   </li>
                 ))}
               </ul>
+              <p className='text-slate-600 text-base md:text-lg mt-5 md:mt-6'>{currentContent?.conclusion}</p>
             </div>
-            <div className='border border-slate-200 bg-slate-100 rounded-lg px-5 pt-5 flex justify-center items-end max-h-[483px]'>
+            <div className='w-full border border-slate-200 bg-slate-100 rounded-lg px-5 pt-5 flex justify-center items-end max-h-[483px] relative'>
+              {loading &&
+                <div className='absolute inset-0 flex items-center justify-center h-full w-full bg-slate-200 z-20'>
+                  <AiOutlineLoading3Quarters className='text-slate-500 text-6xl animate-spin' />
+                </div>
+              }
               <Image
                 src={currentContent?.image}
                 alt={activeTab?.title}
                 width={500}
                 height={500}
+                onLoadingComplete={() => setLoading(false)}
                 className='object-contain h-full w-auto'
               />
             </div>
