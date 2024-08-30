@@ -8,9 +8,9 @@ type Props = {}
 const Footer = (props: Props) => {
   return (
     <footer className='bg-primary '>
-      <div className='w-full h-32 bg-white rounded-b-[80px]'></div>
+      <div className='w-full h-20 md:h-32 bg-white rounded-b-[48px] md:rounded-b-[80px]'></div>
       <div className='layout py-10'>
-        <div className='flex justify-between items-center'>
+        <div className='flex flex-col gap-y-8 md:flex-row justify-between items-center'>
           <div>
             <div className='flex justify-start md:justify-end items-center gap-3 md:gap-4'>
               {socials.map((item, index) => (
@@ -20,17 +20,19 @@ const Footer = (props: Props) => {
               ))}
             </div>
           </div>
-          <div><p className='text-sm md:text-base text-white leading-normal text-center'>Copyright © {new Date().getFullYear()} Apex Autos. All rights reserved.</p></div>
+          <div><p className='text-sm md:text-base text-white leading-normal text-center'> © {new Date().getFullYear()} Apex Mechanic Inc.</p></div>
           <div className='flex gap-5'>
             <Button
               secondary
               buttonText='Terms of Service'
               buttonLink='/'
+              className='text-sm mdt:text-base'
             />
             <Button
               secondary
               buttonText='Privacy Policy'
               buttonLink='/'
+              className='text-sm mdt:text-base'
             />
           </div>
         </div>

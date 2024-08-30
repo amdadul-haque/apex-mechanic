@@ -14,7 +14,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        heading: ["TT Firs Neue Trl", "sans-serif"],
+        "TT-firs": ["TT Firs Neue Trl", "sans-serif"],
       },
       colors: {
         primary: "#0545EA",
@@ -28,6 +28,8 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ],
 };
 export default config;
