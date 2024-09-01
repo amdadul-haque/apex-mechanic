@@ -19,6 +19,7 @@ const config: Config = {
       colors: {
         primary: "#0545EA",
         "primary-light": "#007AFF",
+        "primary-dark": "#002394",
         "gray-1": "#505459",
         black: {
           0: "#000",
@@ -28,8 +29,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    require('tailwind-scrollbar-hide')
-  ],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
 export default config;

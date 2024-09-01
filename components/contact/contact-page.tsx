@@ -6,9 +6,9 @@ import { Button, Input } from '../core'
 import { FaRegCircle, FaRegDotCircle } from 'react-icons/fa';
 
 const options = [
-  { id: 'software', label: 'I use a software to manage appointment' },
+  { id: 'custom-software', label: 'i use a software to manage appointments' },
   { id: 'pen-paper', label: 'Pen and paper' },
-  { id: 'custom-software', label: 'Software' },
+  // { id: 'custom-software', label: 'Software' },
   { id: 'others', label: 'Others' },
 ];
 
@@ -29,7 +29,7 @@ const Contact = (props: Props) => {
     <div>
       <div className='layout pt-12 md:pt-16 xl:pt-20'>
         <div className='flex flex-col md:flex-row items-stretch gap-8'>
-          <div className='bg-primary rounded-lg md:rounded-xl xl:rounded-[16px] w-full md:w-[296px] md:max-w-[296px] px-8 py-10 text-white flex flex-col justify-between'>
+          <div className='bg-primary-dark rounded-lg md:rounded-xl xl:rounded-[16px] w-full md:w-[296px] md:max-w-[296px] px-8 py-10 text-white flex flex-col justify-between'>
             <div className='flex flex-col gap-5 md:gap-8'>
               <div>
                 <h3 className='text-2xl md:text-[28px] xl:text-[32px] font-semibold font-TT-firs leading-none'>Get In Touch</h3>

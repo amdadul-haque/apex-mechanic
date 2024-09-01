@@ -55,6 +55,10 @@ const Features = () => {
 
   const [loading, setLoading] = useState<boolean>(true);
 
+  useEffect(() => {
+    setLoading(true);
+  }, [currentContent]);
+
   return (
     <div>
       <div className='layout-narrow pt-16 md:pt-20 lg:pt-24 xl:pt-28'>
@@ -119,7 +123,7 @@ const Features = () => {
             </div>
             <div className='w-full border border-slate-200 bg-slate-100 rounded-lg px-5 pt-5 flex justify-center items-end max-h-[483px] relative'>
               {loading &&
-                <div className='absolute inset-0 flex items-center justify-center h-full w-full bg-slate-200 z-20'>
+                <div className='absolute inset-0 flex items-center justify-center h-full w-full bg-slate-100 z-20'>
                   <AiOutlineLoading3Quarters className='text-slate-500 text-6xl animate-spin' />
                 </div>
               }

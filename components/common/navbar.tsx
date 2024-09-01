@@ -8,13 +8,16 @@ import { FaBars, FaTimes } from 'react-icons/fa'
 
 type Props = {}
 
+
 const Navbar = (props: Props) => {
   const links = [
+    { name: 'Home', href: '/' },
     { name: 'Features', href: '/features' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Login', href: '/login' },
+    { name: 'Login', href: 'https://app.apexmechanic.com/', isNewTab: true },
   ]
   const pathName = usePathname();
+  const currentRoute = pathName.split('/')[1];
 
   const [showMobileNav, setShowMobileNav] = useState<boolean>(false)
   return (
@@ -34,15 +37,15 @@ const Navbar = (props: Props) => {
             <ul className='flex gap-12'>
               {links.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href}>
-                    <span className={`text-gray-500 hover:text-primary transition text-lg font-medium ${pathName.includes(link?.href) && 'text-primary'} `}>{link.name}</span>
+                  <Link href={link.href} target={link?.isNewTab ? '_blank' : '_self'}>
+                    <span className={` hover:text-primary transition text-lg font-medium ${currentRoute === link?.href.replace(/^\//, '') ? 'text-primary' : 'text-gray-500'} `}>{link.name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
             <Button
-              buttonText='Reques Free Demo'
-              buttonLink='/login'
+              buttonText='Request free demo'
+              buttonLink='/contact'
             />
           </div>
           <button
@@ -69,10 +72,10 @@ const Navbar = (props: Props) => {
               </li>
             ))}
             <li>
-            <Button
-              buttonText='Reques Free Demo'
-              buttonLink='/login'
-            />
+              <Button
+                buttonText='Request free demo'
+                buttonLink='/contact'
+              />
             </li>
           </ul>
         </div>
