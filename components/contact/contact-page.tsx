@@ -6,17 +6,19 @@ import { Button, Input } from '../core'
 import { FaRegCircle, FaRegDotCircle } from 'react-icons/fa';
 
 const options = [
-  { id: 'custom-software', label: 'i use a software to manage appointments' },
+  { id: 'custom-software', label: 'I use a software to manage appointments' },
   { id: 'pen-paper', label: 'Pen and paper' },
   // { id: 'custom-software', label: 'Software' },
-  { id: 'others', label: 'Others' },
+  { id: 'other', label: 'Other' },
 ];
 
 
 type Props = {}
 
 const Contact = (props: Props) => {
-  const [name, setName] = useState<string>('')
+  const [firstName, setFirstName] = useState<string>('')
+  const [lastName, setLastName] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
   const [phone, setPhone] = useState<string>('')
   const [shopName, setShopName] = useState<string>('')
   const [appointmentSystem, setAppointmentSystem] = useState<string>('')
@@ -59,7 +61,7 @@ const Contact = (props: Props) => {
           </div>
           <div className='w-full'>
             <div>
-              {name}
+              {firstName}
             </div>
             <form
               action=""
@@ -67,11 +69,30 @@ const Contact = (props: Props) => {
             >
               <div className='flex flex-col md:flex-row w-full gap-5'>
                 <Input
-                  label='Name'
+                  label='First Name'
                   placeholder='John'
                   type='text'
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  className='!w-full'
+                />
+                <Input
+                  label='Last Name'
+                  placeholder='(123) 456-7890'
+                  type='text'
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  className='!w-full'
+                />
+              </div>
+
+              <div className='flex flex-col md:flex-row w-full gap-5'>
+                <Input
+                  label='Email'
+                  placeholder=''
+                  type='email'
+                  value={firstName}
+                  onChange={(e) => setEmail(e.target.value)}
                   className='!w-full'
                 />
                 <Input
@@ -82,7 +103,6 @@ const Contact = (props: Props) => {
                   onChange={(e) => setPhone(e.target.value)}
                   className='!w-full'
                 />
-
               </div>
 
               <Input
