@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";
-import { Footer, Navbar } from "@/components/common";
-import Providers from "@/components/common/progress-bar-provier";
+import { Footer, Navbar } from "@/components";
+import Providers from "@/components/progress-bar-provier";
 
 const archivo = Archivo({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 

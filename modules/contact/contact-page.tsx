@@ -1,8 +1,8 @@
 'use client'
+import { Button, Input } from '@/components/core';
 import { socials } from '@/data'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import { Button, Input } from '../core'
 import { FaRegCircle, FaRegDotCircle } from 'react-icons/fa';
 
 const options = [

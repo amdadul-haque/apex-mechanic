@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
-import { Button } from '../core'
+import { Button } from './core'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
 type Props = {}

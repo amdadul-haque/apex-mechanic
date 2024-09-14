@@ -1,4 +1,4 @@
-import { Features } from '@/components/features'
+import { Features } from '@/modules/features'
 import React from 'react'
 
 type Props = {}
