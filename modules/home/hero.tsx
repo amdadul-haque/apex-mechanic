@@ -4,7 +4,7 @@ type Props = {}
 
 const Hero = (props: Props) => {
   return (
-    <div className=''>
+    <div className='py-28 bg-primary'>
       <div className='layout'>Hero</div>
     </div>
   )

@@ -27,6 +27,123 @@ export const socials = [
 
 
 
+// ============================ home page ==============================
+
+export const homepageFeatures = [
+  {
+    title: "Instant appointment requests from your website or Google profile.",
+    image: "",
+    features: [
+      {
+        icon: "/images/home/features/1/1.svg",
+        title: "",
+        description: "Convert prospective buyers from your Google profile and website into long term paying customers. "
+      },
+      {
+        icon: "/images/home/features/1/2.svg",
+        title: "",
+        description: "Offer your highest margin repair services and packages, boosting your shop’s profitability. "
+      },
+      {
+        icon: "/images/home/features/1/3.svg",
+        title: "",
+        description: "Set your shop’s availability so customers can request appointments for open time slots, saving you time on the phone."
+      },
+      {
+        icon: "/images/home/features/1/4.svg",
+        title: "",
+        description: "Capture business 24/7 allowing for appointment scheduling, before, during and after business hours."
+      },
+    ]
+  },
+  {
+    title: "Reduce phone call interruptions with instant two-way messaging with your customers.",
+    image: "",
+    features: [
+      {
+        icon: "/images/home/features/2/1.svg",
+        title: "",
+        description: "Respond to queries from potential clients, during and after business hours, converting customers and increasing sales."
+      },
+      {
+        icon: "/images/home/features/2/2.svg",
+        title: "",
+        description: "Instantly communicate with your customers in real-time, providing updates on the status of their vehicles. No phone calls necessary."
+      },
+      {
+        icon: "/images/home/features/2/3.svg",
+        title: "",
+        description: "Send photos to customers when additional work is required, boosting trust and conversion rates."
+      },
+    ]
+  },
+  {
+    title: "Quickly produce estimates and invoices.",
+    image: "",
+    features: [
+      {
+        icon: "/images/home/features/3/1.svg",
+        title: "",
+        description: "Create, manage, and send estimates or invoices from one centralized system."
+      },
+      {
+        icon: "/images/home/features/3/2.svg",
+        title: "",
+        description: "Enhance your customer experience by delivering estimates and invoices directly to their emails."
+      },
+      {
+        icon: "/images/home/features/3/3.svg",
+        title: "",
+        description: "Effortlessly track your customer’s vehicles, past appointments, and service history."
+      },
+    ]
+  },
+  {
+    title: "Acquire new customers easily and get discovered on the Apex Auto App for Car Owners",
+    image: "",
+    features: [
+      {
+        icon: "/images/home/features/4/1.svg",
+        title: "",
+        description: "Enable customers to find your shop, and request instant appointments for your most popular and profitable services increasing shop sales."
+      },
+      {
+        icon: "/images/home/features/4/2.svg",
+        title: "",
+        description: "Receive professionally taken and edited photos for your digital shop profile on Apex Auto"
+      },
+      {
+        icon: "/images/home/features/4/3.svg",
+        title: "",
+        description: "Communicate specific vehicle makes serviced, holiday hours and available drop offs reducing phone call interruptions."
+      },
+    ]
+  },
+  {
+    title: "Improve customer satisfaction.",
+    image: "/images/home/features/5/right.png",
+    features: [
+      {
+        icon: "/images/home/features/5/1.svg",
+        title: "",
+        description: "Automatic email and Apex Auto App reminders reduce no-shows and last-minute cancellations."
+      },
+      {
+        icon: "/images/home/features/5/2.svg",
+        title: "",
+        description: "Empower customers to effortlessly track their vehicle's status in real-time using the Apex Auto app, eliminating the need for continuous phone calls for updates."
+      },
+      {
+        icon: "/images/home/features/5/3.svg",
+        title: "",
+        description: "Send invoices straight to your customer’s email reducing the need for printed invoices. "
+      },
+    ]
+  },
+]
+
+
+
 export const featuresContent: FeatureContentInterface[] = [
   {
     id: 0,
@@ -168,3 +285,5 @@ export const featuresContent: FeatureContentInterface[] = [
     conclusion: "Spend less time on paperwork and more time focusing on what you do best. Simplify your finances, improve efficiency, and ensure you get paid promptly."
   },
 ]
+
+

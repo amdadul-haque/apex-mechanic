@@ -18,7 +18,8 @@ const config: Config = {
         "TT-firs": ["TT Firs Neue Trl", "sans-serif"],
       },
       colors: {
-        primary: "#0545EA",
+        // primary: "#0545EA",
+        primary: "#002394",
         "primary-light": "#007AFF",
         "primary-dark": "#002394",
         "gray-1": "#505459",
