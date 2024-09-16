@@ -15,7 +15,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        "TT-firs": ["TT Firs Neue Trl", "sans-serif"],
+        "TT-firs": ["Archivo", "sans-serif"],
+        // "TT-firs": ["TT Firs Neue Trl", "sans-serif"],
       },
       colors: {
         // primary: "#0545EA",

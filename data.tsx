@@ -32,7 +32,7 @@ export const socials = [
 export const homepageFeatures = [
   {
     title: "Instant appointment requests from your website or Google profile.",
-    image: "",
+    image: "/images/home/features/2/right.png",
     features: [
       {
         icon: "/images/home/features/1/1.svg",
@@ -58,7 +58,7 @@ export const homepageFeatures = [
   },
   {
     title: "Reduce phone call interruptions with instant two-way messaging with your customers.",
-    image: "",
+    image: "/images/home/features/2/right.png",
     features: [
       {
         icon: "/images/home/features/2/1.svg",
@@ -79,7 +79,7 @@ export const homepageFeatures = [
   },
   {
     title: "Quickly produce estimates and invoices.",
-    image: "",
+    image: "/images/home/features/3/right.png",
     features: [
       {
         icon: "/images/home/features/3/1.svg",
@@ -100,7 +100,7 @@ export const homepageFeatures = [
   },
   {
     title: "Acquire new customers easily and get discovered on the Apex Auto App for Car Owners",
-    image: "",
+    image: "/images/home/features/4/right.png",
     features: [
       {
         icon: "/images/home/features/4/1.svg",

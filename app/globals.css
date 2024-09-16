@@ -11,3 +11,7 @@
 .layout-narrow {
   @apply w-[90%] max-w-[1062px] mx-auto;
 }
+
+.h3{
+  @apply text-black-1 text-xl md:text-3xl xl:text-[40px] leading-[1.2] font-semibold;
+}
