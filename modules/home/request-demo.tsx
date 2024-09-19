@@ -6,7 +6,7 @@ import React from 'react'
 
 type Props = {}
 
-const Newsletter = (props: Props) => {
+const RequestDemo = (props: Props) => {
   const [email, setEmail] = React.useState('')
   return (
     <div className='py-24 md:py-28 xl:py-32'>
@@ -15,7 +15,7 @@ const Newsletter = (props: Props) => {
           <div className='w-full min-h-[200px] md:w-1/2 relative flex justify-center'>
             <div className='absolute bottom-0 top-[-20%]'>
               <Image
-                src="/images/home/request-demo.png"
+                src="/images/home/request-demo.svg"
                 alt="request-demo"
                 height={500}
                 width={500}
@@ -46,4 +46,4 @@ const Newsletter = (props: Props) => {
   )
 }
 
-export { Newsletter }
+export { RequestDemo }

@@ -1,11 +1,11 @@
-import { CoreFeatures, Downlaods, FeaturesSection, Hero, Invoice, Newsletter } from "@/modules/home";
+import { CoreFeatures, Downlaods, FeaturesSection, Hero, Invoice, RequestDemo } from "@/modules/home";
 
 export default function Home() {
   return (
     <main className="bg-primary text-white">
       <Hero />
       <FeaturesSection />
-      <Newsletter />
+      <RequestDemo />
       <Invoice />
       <CoreFeatures />
       <Downlaods />

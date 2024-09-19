@@ -33,14 +33,14 @@ const FeaturesSection = (props: Props) => {
                         ))}
                       </div>
                     </div>
-                    <div className={`w-full md:w-1/2 md:border md:border-t-0 md:border-r-0 p-0 md:px-10 xl:py-20 ${index == 0 && 'xl:pt-40'} ${index == features?.length - 1 && 'xl:pb-32'}`}>
-                      <div className='border bg-slate-100 px-10 py-12 pb-0 rounded-xl'>
+                    <div className={`w-full md:w-1/2 md:border md:border-t-0 md:border-r-0 p-0 md:pl-10 xl:py-20 ${index == 0 && 'xl:pt-40'} ${index == features?.length - 1 && 'xl:pb-32'}`}>
+                      <div className={`border bg-slate-100 rounded-xl ${index === 0 ? 'p-0 shadow' : 'px-10 py-12 pb-0'}`}>
                         <Image
                           src={item?.image}
                           alt='image'
                           height={500}
                           width={500}
-                          className=''
+                          className='w-full h-auto rounded-xl'
                         />
                       </div>
                     </div>
