@@ -35,10 +35,10 @@ const Newsletter = (props: Props) => {
               />
               <Button 
                 buttonText='Request a Demo'
-                className='absolute bg-primary-light whitespace-nowrap border-none flex items-center h-full right-0'
+                className='absolute bg-primary-lighter whitespace-nowrap border-none flex items-center h-full right-0'
               />
             </div>
-            <p className='font-medium'>Get a Question? <Link href="/contact" className='text-primary-light'>Contact us</Link></p>
+            <p className='font-medium'>Get a Question? <Link href="/contact" className='text-primary-lighter'>Contact us</Link></p>
           </div>
         </div>
       </div>

@@ -14,7 +14,11 @@ const Button = ({ buttonText, buttonLink, secondary, className, newTab }: Props)
     <Link
       href={buttonLink ?? ''}
       target={newTab ? '_blank' : '_self'}
-      className={`inline-block font-TT-firs px-4 py-2 md:px-5 md:py-3 font-medium text-sm rounded-full cursor-pointer ${secondary ? 'bg-white/10 text-slate-200 border border-slate-200 hover:bg-primary hover:text-white hover:border-white' : 'bg-primary/90 text-white hover:bg-primary hover:scale-[1.02] border-2 border-primary'} transition duration-300 text-center ${className} `}
+      className={`inline-block px-4 py-2 md:px-5 lg:px-6 xl:px-8 md:py-3 font-medium text-sm rounded-full cursor-pointer ${secondary ?
+        'bg-white/10 text-slate-200 border border-slate-200 hover:bg-primary-light hover:text-white hover:border-white'
+        :
+        'bg-primary-light/90 text-white hover:bg-primary-light hover:scale-[1.02] border-2 border-primary-light'} 
+        transition duration-300 text-center ${className}`}
     >
       {buttonText}
     </Link>

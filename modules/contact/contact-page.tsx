@@ -78,7 +78,7 @@ const Contact = (props: Props) => {
                 />
                 <Input
                   label='Last Name'
-                  placeholder='(123) 456-7890'
+                  placeholder='Doe'
                   type='text'
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
@@ -89,7 +89,7 @@ const Contact = (props: Props) => {
               <div className='flex flex-col md:flex-row w-full gap-5'>
                 <Input
                   label='Email'
-                  placeholder=''
+                  placeholder='johnx@example.com'
                   type='email'
                   value={firstName}
                   onChange={(e) => setEmail(e.target.value)}

@@ -15,3 +15,7 @@
 .h3{
   @apply text-black-1 text-xl md:text-3xl xl:text-[40px] leading-[1.2] font-semibold;
 }
+
+.hero{
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.0) 100%), url('/images/home/hero/hero-bg.svg');
+}

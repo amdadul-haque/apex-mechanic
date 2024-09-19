@@ -19,14 +19,15 @@ const Navbar = (props: Props) => {
   const pathName = usePathname();
   const currentRoute = pathName.split('/')[1];
 
+  const isHomePage = currentRoute === '' || currentRoute === '/';
   const [showMobileNav, setShowMobileNav] = useState<boolean>(false)
   return (
     <>
-      <header className='py-3 md:py-5 border-b border-b-slate-200 relative z-20'>
+      <header className={`py-3 md:py-5 border-b z-20 ${isHomePage ? 'bg-primary relative md:absolute md:bg-transparent  z-20 top-0 left-0 w-full border-b-white/20' : 'bg-white relative border-slate-200'}`}>
         <nav className='layout flex justify-between items-center'>
           <Link href='/'>
             <Image
-              src={"./images/logo.svg"}
+              src={isHomePage ? '/images/logo-white.svg' : '/images/logo.svg'}
               width={120}
               height={44}
               alt="logo"
@@ -34,53 +35,54 @@ const Navbar = (props: Props) => {
             />
           </Link>
           <div className='gap-12 items-center hidden md:flex'>
-            <ul className='flex gap-12'>
+            <ul className='flex gap-8 xl:gap-12'>
               {links.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} target={link?.isNewTab ? '_blank' : '_self'}>
-                    <span className={` hover:text-primary transition text-lg font-medium ${currentRoute === link?.href.replace(/^\//, '') ? 'text-primary' : 'text-gray-500'} `}>{link.name}</span>
+                    <span className={`transition text-lg font-medium 
+                      ${currentRoute === link?.href.replace(/^\//, '') ?
+                        isHomePage ? 'text-white' : 'text-primary'
+                        : isHomePage ? 'text-slate-300 hover:text-white' : 'text-gray-500 hover:text-primary/70'}
+                        `}>{link.name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
-            <Button
-              buttonText='Request free demo'
-              buttonLink='/contact'
-            />
           </div>
+          <Button
+            buttonText='Request a Free Demo'
+            buttonLink='/contact'
+            className='tracking-wide'
+          />
           <button
-            className='md:hidden'
+            className={`md:hidden ${isHomePage ? 'text-white' : 'text-slate-500'}`}
             onClick={() => setShowMobileNav(!showMobileNav)}
           >
-            {showMobileNav ? <FaTimes className='text-2xl text-slate-500' /> : <FaBars className='text-2xl text-slate-500' />}
+            {showMobileNav ? <FaTimes className='text-2xl ' /> : <FaBars className='text-2xl ' />}
           </button>
 
         </nav>
-      </header>
+      </header >
 
-      <>
-        <div className={`absolute z-10 top-0 left-0  w-full h-screen bg-black-1/50 md:hidden ${showMobileNav ? 'block' : 'hidden'}`}
-          onClick={() => setShowMobileNav(false)}
-        >
-
-          <ul className={`pl-[5%] pt-24 bg-white mx-auto flex flex-col gap-2 pb-8 ${showMobileNav ? 'h-auto' : 'h-0'} transition duration-300`}>
-            {links.map((link) => (
-              <li key={link.name}>
-                <Link href={link.href}>
-                  <span className={`text-gray-500 hover:text-primary transition text-lg font-medium ${pathName.includes(link?.href) && 'text-primary'} `}>{link.name}</span>
-                </Link>
-              </li>
-            ))}
-            <li>
-              <Button
-                buttonText='Request free demo'
-                buttonLink='/contact'
-              />
+      <div className={`absolute z-10 top-0 left-0 w-full h-screen bg-black-1/50 md:hidden ${showMobileNav ? 'block' : 'hidden'}`}
+        onClick={() => setShowMobileNav(false)}
+      >
+        <ul className={`pl-[5%] pt-24 bg-white relative !z-[9] mx-auto flex flex-col gap-2 pb-8 ${showMobileNav ? 'h-auto' : 'h-0'} transition duration-300`}>
+          {links.map((link) => (
+            <li key={link.name}>
+              <Link href={link.href}>
+                <span className={`text-gray-500 hover:text-primary transition text-lg font-medium ${pathName.includes(link?.href) && 'text-primary'} `}>{link.name}</span>
+              </Link>
             </li>
-          </ul>
-        </div>
-
-      </>
+          ))}
+          <li>
+            <Button
+              buttonText='Request a Free Demo'
+              buttonLink='/contact'
+            />
+          </li>
+        </ul>
+      </div>
     </>
   )
 }

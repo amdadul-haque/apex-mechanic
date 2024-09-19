@@ -61,7 +61,7 @@ const Features = () => {
 
   return (
     <div>
-      <div className='layout-narrow pt-16 md:pt-20 lg:pt-24 xl:pt-28'>
+      <div className='layout pt-16 md:pt-20 lg:pt-24 xl:pt-28'>
         <div className='max-w-[680px] mx-auto flex flex-col items-center'>
           <h2 className='text-slate-950 text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-TT-firs font-bold leading-[1.2] text-center'>
             Get Discovered by car owners who need you
@@ -70,7 +70,7 @@ const Features = () => {
             Apex Mechanic makes it easy to build a strong online presence and connect with local customers.
           </p>
         </div>
-        <div className='mt-7 md:mt-9 xl:mt-12 relative'>
+        <div className='layout-narrow mt-7 md:mt-9 xl:mt-12 relative'>
           <div
             ref={scrollContainerRef}
             className='w-full overflow-x-auto flex gap-3 relative scrollbar-hide'
@@ -102,12 +102,15 @@ const Features = () => {
             <FaArrowRight className='text-primary' />
           </button>
         </div>
-        <div className='mt-5 md:mt-6 xl:mt-8 border border-slate-200 bg-slate-50 rounded-lg px-5 py-6 md:px-6 md:py-8 xl:px-8 xl:py-10'>
-          <div className='w-full flex flex-col-reverse md:flex-row gap-y-8 gap-x-8'>
+        <div className='mt-5 md:mt-6 xl:mt-8 border border-slate-200 bg-slate-50 rounded-lg px-5 py-6 md:px-6 lg:px-8 md:py-8 xl:px-[60px] xl:py-10'>
+          <h3 className='text-slate-950 text-lg md:text-xl xl:text-2xl font-semibold !leading-[1.2] text-center px-3'>
+            {currentContent?.title}
+          </h3>
+          <div className='w-full flex flex-col-reverse md:flex-row items-center gap-y-8 gap-x-8 mt-6 md:mt-8 xl:mt-[60px]'>
             <div className='w-full'>
-              <h3 className='text-slate-950 text-lg md:text-xl xl:text-2xl font-TT-firs font-bold leading-[1.3]'>
+              {/* <h3 className='text-slate-950 text-lg md:text-xl xl:text-2xl font-TT-firs font-bold leading-[1.3]'>
                 {currentContent?.title}
-              </h3>
+              </h3> */}
               <ul className='mt-4 md:mt-5 xl:mt-6'>
                 {currentContent?.description.map((item, index) => (
                   <li key={index} className='text-slate-600 '>
@@ -121,7 +124,7 @@ const Features = () => {
               </ul>
               <p className='text-slate-600 text-base md:text-lg mt-5 md:mt-6'>{currentContent?.conclusion}</p>
             </div>
-            <div className='w-full border border-slate-200 bg-slate-100 rounded-lg px-5 pt-5 flex justify-center items-end max-h-[483px] relative'>
+            <div className='w-full border border-slate-200 bg-slate-100 rounded-lg px-5 pt-10 flex justify-center items-end max-h-[483px] relative'>
               {loading &&
                 <div className='absolute inset-0 flex items-center justify-center h-full w-full bg-slate-100 z-20'>
                   <AiOutlineLoading3Quarters className='text-slate-500 text-6xl animate-spin' />
@@ -133,7 +136,7 @@ const Features = () => {
                 width={500}
                 height={500}
                 onLoadingComplete={() => setLoading(false)}
-                className='object-contain h-full w-auto'
+                className='object-contain w-[96%]'
               />
             </div>
           </div>

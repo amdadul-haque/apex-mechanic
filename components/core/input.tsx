@@ -19,7 +19,7 @@ const Input = ({ label, placeholder, type, value, onChange, className }: Props) 
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className={`border border-slate-300 outline-none focus:outline-none focus:border-primary/80 transition duration-300 rounded-lg p-2  ${className}`}
+        className={`border border-slate-300 outline-none focus:outline-none focus:border-primary/80 transition duration-300 rounded-lg p-2 px-3  ${className}`}
       />
     </div>
   )

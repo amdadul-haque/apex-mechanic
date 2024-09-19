@@ -32,7 +32,7 @@ export const socials = [
 export const homepageFeatures = [
   {
     title: "Instant appointment requests from your website or Google profile.",
-    image: "/images/home/features/2/right.png",
+    image: "/images/home/features/1/right-2.gif",
     features: [
       {
         icon: "/images/home/features/1/1.svg",
