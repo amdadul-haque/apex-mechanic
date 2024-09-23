@@ -1,6 +1,8 @@
+'use client'
 import { Button } from '@/components/core'
 import Image from 'next/image'
 import React from 'react'
+import { motion } from 'framer-motion'
 
 type Props = {}
 
@@ -8,7 +10,12 @@ const Hero = (props: Props) => {
   return (
 
     <div className='hero pt-[88px] flex items-center'>
-      <div className='w-full py-16 md:py-20 xl:pt-[124px] xl:pb-[102px] flex flex-col-reverse md:flex-row justify-between gap-y-10'>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className='w-full py-16 md:py-20 xl:pt-[124px] xl:pb-[102px] flex flex-col-reverse md:flex-row justify-between gap-y-10'
+      >
         <div className='w-full md:w-1/2 flex items-center'>
           <div className='w-[90%] max-w-[640px] ml-auto md:pr-5 lg:pr-10 xl:pr-20'>
             <h1 className='text-4xl lg:text-5xl xl:text-6xl font-medium !leading-[1]'>Boost your shop sales and save time.</h1>
@@ -30,8 +37,7 @@ const Hero = (props: Props) => {
             className='w-full'
           />
         </div>
-
-      </div>
+      </motion.div >
     </div>
   )
 }

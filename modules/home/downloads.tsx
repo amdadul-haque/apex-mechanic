@@ -1,6 +1,8 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { motion } from 'framer-motion'
 
 type Props = {}
 
@@ -8,7 +10,12 @@ const Downlaods = (props: Props) => {
   return (
     <div className='bg-white rounded-t-[30px] md:rounded-t-[60px] pt-20 md:pt-32'>
       <div className='layout'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-8'>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className='grid grid-cols-1 lg:grid-cols-2 gap-8'
+        >
           <div className='bg-slate-800 p-5 pt-10 md:p-10 lg:p-5 xl:p-10 !pb-0 rounded-xl md:rounded-3xl xl:rounded-[30px] flex flex-col md:flex-row gap-y-10 gap-x-5'>
             <div className='md:w-3/5'>
               <Image
@@ -94,7 +101,7 @@ const Downlaods = (props: Props) => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

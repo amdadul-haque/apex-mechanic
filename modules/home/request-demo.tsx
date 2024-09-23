@@ -1,9 +1,9 @@
 'use client'
-import { Button, Input } from '@/components/core'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { toast } from 'react-toastify'
+import { motion } from 'framer-motion'
 
 type Props = {}
 
@@ -40,7 +40,11 @@ const RequestDemo = (props: Props) => {
   return (
     <div className='py-24 md:py-28 xl:py-32'>
       <div className='layout'>
-        <div className='w-full bg-white mt-[5%] text-black-0 rounded-2xl flex flex-col md:flex-row justify-between gap-y-5 gap-x-10 px-2 md:px-8 xl:pl-16'>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className='w-full bg-white mt-[5%] text-black-0 rounded-2xl flex flex-col md:flex-row justify-between gap-y-5 gap-x-10 px-2 md:px-8 xl:pl-16'>
           <div className='w-full min-h-[200px] md:w-1/2 relative flex justify-center'>
             <div className='absolute bottom-0 top-[-20%]'>
               <Image
@@ -79,7 +83,7 @@ const RequestDemo = (props: Props) => {
             </form>
             <p className='font-medium'>Get a Question? <Link href="/contact" className='text-primary-lighter'>Contact us</Link></p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

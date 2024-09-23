@@ -1,7 +1,7 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
-import { FaCheck } from 'react-icons/fa'
-import { FaCircleCheck } from 'react-icons/fa6'
+import { motion } from 'framer-motion'
 
 type Props = {}
 
@@ -45,11 +45,15 @@ const Invoice = (props: Props) => {
         <div className='flex flex-col gap-10 md:gap-16 xl:gap-28'>
           {
             sectionData.map((item, index) =>
-              <>
-                <div className={`flex flex-col-reverse justify-between gap-y-10 gap-x-12 items-center ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                  <div className='w-full md:w-1/2 flex flex-col gap-5 md:gap-6 xl:gap-7'>
-                    <h3 className='text-black-1 text-2xl md:text-3xl xl:text-[40px] !leading-[1.2] max-w-[80%] font-semibold'>{item?.title}</h3>
-                    {/* <div className='flex flex-col gap-3 md:gap-4 xl:gap-5'>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+
+                className={`flex flex-col-reverse justify-between gap-y-10 gap-x-12 items-center ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                <div className='w-full md:w-1/2 flex flex-col gap-5 md:gap-6 xl:gap-7'>
+                  <h3 className='text-black-1 text-2xl md:text-3xl xl:text-[40px] !leading-[1.2] max-w-[80%] font-semibold'>{item?.title}</h3>
+                  {/* <div className='flex flex-col gap-3 md:gap-4 xl:gap-5'>
                       {item.features.map((item, index) => (
                         <div key={index} className='flex gap-3'>
                           <div className='w-7 min-w-[24px] pt-2'>
@@ -59,36 +63,35 @@ const Invoice = (props: Props) => {
                         </div>
                       ))}
                     </div> */}
-                    <div className='flex flex-col gap-3 md:gap-4 xl:gap-5'>
-                      {item.features.map((item, index) => (
-                        <div key={index} className='flex gap-3'>
-                          <div className='w-7 min-w-[24px] pt-2'>
-                            <Image
-                              src={item.icon}
-                              alt='icon'
-                              height={24}
-                              width={24}
-                              className='size-6'
-                            />
-                          </div>
-                          <p className='text-slate-700 text-base md:text-lg font-medium'>{item?.description}</p>
+                  <div className='flex flex-col gap-3 md:gap-4 xl:gap-5'>
+                    {item.features.map((item, index) => (
+                      <div key={index} className='flex gap-3'>
+                        <div className='w-7 min-w-[24px] pt-2'>
+                          <Image
+                            src={item.icon}
+                            alt='icon'
+                            height={24}
+                            width={24}
+                            className='size-6'
+                          />
                         </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className='w-full md:w-1/2 '>
-                    <div className='border bg-slate-100 flex justify-center py-12 rounded-xl'>
-                      <Image
-                        src={item?.image}
-                        alt='image'
-                        height={500}
-                        width={500}
-                        className=''
-                      />
-                    </div>
+                        <p className='text-slate-700 text-base md:text-lg font-medium'>{item?.description}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </>
+                <div className='w-full md:w-1/2 '>
+                  <div className='border bg-slate-100 flex justify-center py-12 rounded-xl'>
+                    <Image
+                      src={item?.image}
+                      alt='image'
+                      height={500}
+                      width={500}
+                      className=''
+                    />
+                  </div>
+                </div>
+              </motion.div>
             )}
         </div>
       </div>

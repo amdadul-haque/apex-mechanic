@@ -1,6 +1,8 @@
+'use client'
 import { homepageFeatures as features } from '@/data'
 import Image from 'next/image'
 import React from 'react'
+import { motion } from 'framer-motion'
 
 type Props = {}
 
@@ -13,7 +15,12 @@ const FeaturesSection = (props: Props) => {
             {
               features.map((item, index) =>
                 <>
-                  <div className='flex flex-col-reverse md:flex-row justify-between gap-y-10 items-center'>
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className='flex flex-col-reverse md:flex-row justify-between gap-y-10 items-center'
+                  >
                     <div className='w-full md:w-1/2 flex flex-col gap-5 md:gap-6 xl:gap-7 md:pr-8 xl:pr-12'>
                       <h3 className='text-black-1 text-2xl md:text-3xl xl:text-[40px] leading-[1.2] font-TT-firs font-semibold'>{item?.title}</h3>
                       <div className='flex flex-col gap-3 md:gap-4 xl:gap-5'>
@@ -44,10 +51,10 @@ const FeaturesSection = (props: Props) => {
                         />
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </>
               )}
-          </div>
+          </div >
         </div>
       </div>
     </>
