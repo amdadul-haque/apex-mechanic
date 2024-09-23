@@ -50,7 +50,7 @@ const Navbar = (props: Props) => {
             </ul>
           </div>
           <Button
-            buttonText='Request a Free Demo'
+            buttonText='Request free demo'
             buttonLink='/contact'
             className='tracking-wide'
           />
@@ -77,7 +77,7 @@ const Navbar = (props: Props) => {
           ))}
           <li>
             <Button
-              buttonText='Request a Free Demo'
+              buttonText='Request free demo'
               buttonLink='/contact'
             />
           </li>

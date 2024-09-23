@@ -7,6 +7,7 @@ type Props = {
   secondary?: boolean;
   className?: string;
   newTab?: boolean;
+  onClick?: () => void;
 }
 
 const Button = ({ buttonText, buttonLink, secondary, className, newTab }: Props) => {

@@ -2,8 +2,9 @@
 import { Button, Input } from '@/components/core';
 import { socials } from '@/data'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaRegCircle, FaRegDotCircle } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 const options = [
   { id: 'custom-software', label: 'I use a software to manage appointments' },
@@ -27,6 +28,74 @@ const Contact = (props: Props) => {
 
   const [selectedOption, setSelectedOption] = useState('');
   const [customSoftware, setCustomSoftware] = useState('');
+
+
+
+  const [isChecked, setIsChecked] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  useEffect(() => {
+    setAppointmentSystem(selectedOption === 'custom-software' ? "Custom Software" : options.find((option) => option.id === selectedOption)?.label ?? '');
+    if (selectedOption !== 'custom-software') {
+      setCustomSoftware('');
+    }
+  }, [selectedOption, customSoftware]);
+
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      const response = await fetch('/api/sendMail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          formData: {
+            firstName,
+            lastName,
+            email,
+            phone,
+            shopName,
+            appointmentSystem,
+            customSoftware,
+            howDidYouHear,
+            comments
+          }
+        }),
+      });
+      const result = await response.json();
+      if (result.success) {
+        console.log(result.message);
+        setIsSuccess(true);
+        console.log(isSuccess + 'isSuccess');
+        toast.success('Message sent successfully');
+      } else {
+        console.error(result.message);
+        setIsSuccess(false);
+        console.log(isSuccess + 'isSuccess');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    } finally {
+      toast.success('Message sent successfully');
+      setIsLoading(false);
+      setEmail('');
+      setIsChecked(false);
+      setIsSuccess(true);
+      setFirstName('');
+      setLastName('');
+      setEmail('');
+      setPhone('');
+      setShopName('');
+      setAppointmentSystem('');
+      setCustomSoftware('');
+      setHowDidYouHear('');
+      setComments('');
+    }
+  };
   return (
     <div>
       <div className='layout pt-12 md:pt-16 xl:pt-20'>
@@ -53,16 +122,24 @@ const Contact = (props: Props) => {
               <div className='flex justify-start items-center gap-3 md:gap-4 mt-3'>
                 {socials.map((item, index) => (
                   <Link key={index} href={item.link}>
-                    <span className='bg-white border border-white/10 rounded-full text-primary text-base flex justify-center items-center w-8 aspect-square hover:bg-white/30 hover:border-white/50 transition duration-300'>{item?.icon}</span>
+                    <span className='bg-white border border-white/10 rounded-full text-primary text-base flex justify-center items-center w-8 aspect-square hover:bg-white/80 hover:border-white/50 transition duration-300'>{item?.icon}</span>
                   </Link>
                 ))}
               </div>
             </div>
           </div>
           <div className='w-full'>
-            <div>
+            {/* <div>
               {firstName}
-            </div>
+              {lastName}
+              {email}
+              {phone}
+              {shopName}
+              {appointmentSystem}
+              {customSoftware}
+              {howDidYouHear}
+              {comments}
+            </div> */}
             <form
               action=""
               className='w-full flex flex-col gap-5 md:gap-6 xl:gap-8'
@@ -88,10 +165,10 @@ const Contact = (props: Props) => {
 
               <div className='flex flex-col md:flex-row w-full gap-5'>
                 <Input
-                  label='Email'
+                  label='Email *'
                   placeholder='johnx@example.com'
                   type='email'
-                  value={firstName}
+                  value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className='!w-full'
                 />
@@ -106,7 +183,7 @@ const Contact = (props: Props) => {
               </div>
 
               <Input
-                label='Shop Name'
+                label='Shop Name *'
                 placeholder='Apex Mechanic'
                 type='text'
                 value={shopName}
@@ -149,10 +226,13 @@ const Contact = (props: Props) => {
               <div className='w-full'>
                 <h2 className='text-slate-800 leading-none text-base'>How did you hear about us?</h2>
                 <select
-                  name=""
-                  id=""
+                  name="howDidYouHear"
+                  id="howDidYouHear"
+                  value={howDidYouHear}
+                  onChange={(e) => setHowDidYouHear(e.target.value)}
                   className={`w-full border border-slate-300 outline-none focus:outline-none focus:border-primary/80 transition duration-300 rounded-lg p-2 mt-3`}
                 >
+                  <option value="">Select One</option>
                   <option value="Facebook">Facebook</option>
                   <option value="Instagram">Instagram</option>
                   <option value="Google">Google</option>
@@ -163,17 +243,33 @@ const Contact = (props: Props) => {
               <div className='w-full'>
                 <h2 className='text-slate-800 leading-none text-base'>Question or comments</h2>
                 <textarea name="" id=""
+                  value={comments}
+                  onChange={(e) => setComments(e.target.value)}
                   className={`w-full border border-slate-300 outline-none focus:outline-none focus:border-primary/80 transition duration-300 rounded-lg p-2 mt-3 h-32`}
                 >
 
                 </textarea>
               </div>
 
-              <div>
+              {/* <button className='bg-red-50'
+                onClick={handleSubmit}
+              >
                 <Button
                   buttonText='Submit'
                   className='w-full sm:w-[219px] text-base md:text-lg font-medium'
                 />
+              </button> */}
+
+              <div>
+
+                <button
+                  className='primary-btn disabled:opacity-50'
+                  onClick={handleSubmit}
+                  disabled={email === '' || shopName === ''}
+                // disabled={firstName === '' || email === '' || phone === '' || shopName === '' || appointmentSystem === '' || howDidYouHear === '' || comments === ''}
+                >
+                  {isLoading ? 'Sending...' : 'Submit'}
+                </button>
               </div>
 
             </form>

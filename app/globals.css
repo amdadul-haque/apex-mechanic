@@ -19,3 +19,7 @@
 .hero{
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.0) 100%), url('/images/home/hero/hero-bg.svg');
 }
+
+.primary-btn{
+  @apply inline-block px-4 py-2 md:px-5 lg:px-6 xl:px-8 md:py-3 font-medium text-sm rounded-full cursor-pointer bg-primary-light/90 text-white hover:bg-primary-light hover:scale-[1.02] border-2 border-primary-light transition duration-300 text-center
+}

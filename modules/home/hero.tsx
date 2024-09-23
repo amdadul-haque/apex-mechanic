@@ -12,9 +12,9 @@ const Hero = (props: Props) => {
         <div className='w-full md:w-1/2 flex items-center'>
           <div className='w-[90%] max-w-[640px] ml-auto md:pr-5 lg:pr-10 xl:pr-20'>
             <h1 className='text-4xl lg:text-5xl xl:text-6xl font-medium !leading-[1]'>Boost your shop sales and save time.</h1>
-            <p className='text-base md:text-lg mt-5 md:mt-6 xl:mt-8 mb-7 md:mb-8 xl:mb-10'>Online scheduling for your shop with instant appointment requests. No back and forth needed. Capture new business after closing hours and increase customer satisfaction.</p>
+            <p className='text-base md:text-lg mt-5 md:mt-6 xl:mt-8 mb-7 md:mb-8 xl:mb-10 text-[#A9D7FF]'>Streamline your repair shop with online scheduling and <span className='text-white'>instant appointment requests</span>—no more back-and-forth needed. Capture new business 24/7 while reducing your phone call interruptions. </p>
             <Button
-              buttonText='Start Free Trial'
+              buttonText='Request free demo'
               buttonLink='/contact'
               secondary
               className='tracking-wide !text-lg !bg-white !text-black-1 hover:scale-[1.02] hover:!text-lg hover:!text-white hover:!bg-primary-light'
