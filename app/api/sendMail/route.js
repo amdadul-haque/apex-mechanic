@@ -26,7 +26,8 @@ export async function POST(request) {
 
     const mailOption = {
       from: email,
-      to: "amdad.zatiq@gmail.com",
+      // to: "amdad.zatiq@gmail.com",
+      to: process.env.EMAIL_TO,
       subject: `New Form Submission from ${shopName}`,
       html: `
           <div style="font-family: Arial, sans-serif; color: #333; padding: 20px;">
