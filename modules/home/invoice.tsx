@@ -51,18 +51,8 @@ const Invoice = (props: Props) => {
                 transition={{ duration: 0.5 }}
 
                 className={`flex flex-col-reverse justify-between gap-y-10 gap-x-12 items-center ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                <div className='w-full md:w-1/2 flex flex-col gap-5 md:gap-6 xl:gap-7'>
+                <div className='w-full md:w-1/2 flex flex-col gap-5 md:gap-6 xl:gap-10'>
                   <h3 className='text-black-1 text-2xl md:text-3xl xl:text-[40px] !leading-[1.2] max-w-[80%] font-semibold'>{item?.title}</h3>
-                  {/* <div className='flex flex-col gap-3 md:gap-4 xl:gap-5'>
-                      {item.features.map((item, index) => (
-                        <div key={index} className='flex gap-3'>
-                          <div className='w-7 min-w-[24px] pt-2'>
-                            <FaCircleCheck className='text-black-1 text-2xl' />
-                          </div>
-                          <p className='text-slate-700 text-base md:text-lg font-medium'>{item}</p>
-                        </div>
-                      ))}
-                    </div> */}
                   <div className='flex flex-col gap-3 md:gap-4 xl:gap-5'>
                     {item.features.map((item, index) => (
                       <div key={index} className='flex gap-3'>
