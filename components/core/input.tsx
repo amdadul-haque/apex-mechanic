@@ -6,14 +6,14 @@ type Props = {
   type: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  isRequired?: boolean;
   className?: string;
-
 }
 
-const Input = ({ label, placeholder, type, value, onChange, className }: Props) => {
+const Input = ({ label, placeholder, type, value, onChange, isRequired ,className }: Props) => {
   return (
     <div className='w-full'>
-      {label && <h2 className='text-slate-800 leading-none text-base mb-3'>{label}</h2>}
+      {label && <h2 className='text-slate-800 leading-none text-base mb-3'>{label} <span className='text-red-500 text-xl'>{isRequired && '*'}</span></h2>}
       <input
         type={type}
         placeholder={placeholder}

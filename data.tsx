@@ -147,7 +147,7 @@ export const homepageFeatures = [
 export const featuresContent: FeatureContentInterface[] = [
   {
     id: 0,
-    title: "Streamline the approval process with instant requests via the Apex Auto App, secure e-signatures for audit trails, and enhance customer trust by visually sharing necessary repair details",
+    title: "Increase conversions and customer trust for approvals by sending photos and videos through the Apex Auto App.",
     image: "/images/features/0.png",
     description: [
       {
@@ -166,7 +166,7 @@ export const featuresContent: FeatureContentInterface[] = [
   },
   {
     id: 1,
-    title: "Improve the efficiency of appointment management by enabling seamless viewing, scheduling, and modification of bookings, complemented by automated notifications to enhance customer satisfaction.",
+    title: "Create, manage and reschedule appointments  with automated emails sent to customers.",
     image: "/images/features/1.png",
     description: [
       {
@@ -185,7 +185,7 @@ export const featuresContent: FeatureContentInterface[] = [
   },
   {
     id: 2,
-    title: "Streamline your workflow and enhance customer communication with organized vehicle management, automated notifications, and remote access to your shop's operations",
+    title: "Easily view your shop’s work in progress from your computer or smartphone.",
     image: "/images/features/2.png",
     description: [
       {
@@ -204,7 +204,7 @@ export const featuresContent: FeatureContentInterface[] = [
   },
   {
     id: 3,
-    title: "A smoother scheduling experience for both you and your customers, leading to more customers, valuable time saved, and a modern booking experience for your customers.",
+    title: "Easy scheduling for your customers, saving you time and converting more prospects.",
     image: "/images/features/3.png",
     description: [
       {
@@ -223,7 +223,7 @@ export const featuresContent: FeatureContentInterface[] = [
   },
   {
     id: 4,
-    title: "Save valuable time avoiding unnecessary phone calls, streamline communication, and provide a more responsive experience for your customers.",
+    title: "Save valuable time by reducing phone call interruptions while delivering a more responsive  experience to your customers.",
     image: "/images/features/4.png",
     description: [
       {
@@ -242,7 +242,7 @@ export const featuresContent: FeatureContentInterface[] = [
   },
   {
     id: 5,
-    title: "Fosters smoother communication, leading to a more positive experience for both you and your clients.",
+    title: "Increase customer satisfaction and trust, delivering an exceptional customer experience. ",
     image: "/images/features/5.png",
     description: [
       {
@@ -258,31 +258,26 @@ export const featuresContent: FeatureContentInterface[] = [
         description: "Enhance communication and build trust with instant messaging to keep customers informed about their vehicle status.",
       },
     ],
-    conclusion: "Improved customer satisfaction through clear communication, leading to repeat business and positive online reviews."
   },
   {
     id: 6,
-    title: "Streamlines the process of creating estimates and invoices, saving you valuable time and effort.",
+    title: "Create estimates and invoices, keeping all records organized in one easy-to-use system.",
     image: "/images/features/6.png",
     description: [
-      {
-        title: "",
-        description: "Easily create invoices after appointments with pre-filled details including service completed, ODO, and vehicle information.",
-      },
       {
         title: "",
         description: "Quickly generate professional estimates based on service details, ensuring transparency with your customers.",
       },
       {
         title: "",
-        description: "Effortlessly create invoices after completing a job, with all necessary information automatically populated.",
+        description: "Send estimates electronically for quicker customer approvals and faster payment processing.",
       },
       {
         title: "",
-        description: "Send invoices electronically for quicker customer approvals and faster payment processing.",
+        description: "Easily create invoices after appointments with pre-filled details including service completed, ODO, and vehicle information.",
       },
+      
     ],
-    conclusion: "Spend less time on paperwork and more time focusing on what you do best. Simplify your finances, improve efficiency, and ensure you get paid promptly."
   },
 ]
 

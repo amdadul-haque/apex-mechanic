@@ -30,6 +30,9 @@ const config: Config = {
           2: "#161B22",
         },
       },
+      screen: {
+        xl: "1240px",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],

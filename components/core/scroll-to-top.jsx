@@ -29,7 +29,7 @@ const ScrollToTop = () => {
       onClick={scrollToTop}
       className={`${
         visible ? "scale-100 animate-bounce" : "scale-0 "
-      } transition-transform duration-300 ease-in-out fixed bottom-8 right-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 focus:outline-none shadow-lg transform hover:scale-110 `}
+      } transition-transform duration-300 ease-in-out fixed right-6 bottom-4 xl:bottom-8 xl:right-8 bg-blue-500 hover:bg-blue-600 text-white rounded-full p-3 focus:outline-none shadow-lg transform hover:scale-110 `}
     >
       <AiOutlineArrowUp className="text-2xl" />
     </button>

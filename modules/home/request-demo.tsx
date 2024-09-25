@@ -57,7 +57,7 @@ const RequestDemo = (props: Props) => {
             </div>
           </div>
           <div className='w-full md:w-1/2 py-5 xl:py-24'>
-            <h3 className='h3'>Ready to Improve Your Online Customer Experience?</h3>
+            <h3 className='h3 !leading-[1.1]'>Ready to take your shop to the next level?</h3>
             <form onSubmit={handleSubmit} className='w-full mt-5 mb-4 flex justify-between relative'>
               <input
                 type='email'

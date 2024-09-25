@@ -165,12 +165,13 @@ const Contact = (props: Props) => {
 
               <div className='flex flex-col md:flex-row w-full gap-5'>
                 <Input
-                  label='Email *'
+                  label='Email'
                   placeholder='johnx@example.com'
                   type='email'
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className='!w-full'
+                  isRequired
                 />
                 <Input
                   label='Phone'
@@ -183,12 +184,13 @@ const Contact = (props: Props) => {
               </div>
 
               <Input
-                label='Shop Name *'
+                label='Shop Name'
                 placeholder='Apex Mechanic'
                 type='text'
                 value={shopName}
                 onChange={(e) => setShopName(e.target.value)}
                 className='w-full'
+                isRequired
               />
 
               <div className=''>
@@ -237,6 +239,7 @@ const Contact = (props: Props) => {
                   <option value="Instagram">Instagram</option>
                   <option value="Google">Google</option>
                   <option value="Friend">Friend</option>
+                  <option value="Another Shop">Another Shop</option>
                 </select>
               </div>
 

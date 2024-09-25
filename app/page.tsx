@@ -1,4 +1,3 @@
-import { ScrollToTop } from "@/components/core";
 import { CoreFeatures, Downlaods, FeaturesSection, Hero, Invoice, RequestDemo } from "@/modules/home";
 
 export default function Home() {
@@ -10,7 +9,6 @@ export default function Home() {
       <Invoice />
       <CoreFeatures />
       <Downlaods />
-      <ScrollToTop />
     </main>
   );
 }

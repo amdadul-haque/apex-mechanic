@@ -5,6 +5,7 @@ import { Footer, Navbar } from "@/components";
 import Providers from "@/components/progress-bar-provier";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import { ScrollToTop } from "@/components/core";
 const archivo = Archivo({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"] });
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function RootLayout({
           <ToastContainer position="top-right" />
           {children}
           <Footer />
+          <ScrollToTop />
         </Providers>
       </body>
     </html>

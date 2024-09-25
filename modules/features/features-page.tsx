@@ -1,145 +1,74 @@
 'use client'
 import { featuresContent } from '@/data';
-import { FeatureContentInterface } from '@/models/types';
 import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import { FaCircleCheck } from 'react-icons/fa6';
+import { motion } from 'framer-motion';
 
-interface TabOption {
-  id: number;
-  title: string;
-}
-
-const tabOptions: TabOption[] = [
-  { id: 0, title: 'Convert More <br> Approvals' },
-  { id: 1, title: 'Enhance Appointment <br> Management' },
-  { id: 2, title: 'Streamline Shop <br> Workflow' },
-  { id: 3, title: 'Keep Your Bays Full' },
-  { id: 4, title: 'Reduce Phone-Call <br> Interruptions' },
-  { id: 5, title: 'Happy Customers' },
-  { id: 6, title: 'Effortless Invoicing & <br> Estimating' }
-];
 
 const Features = () => {
-  const [activeTab, setActiveTab] = useState<TabOption>(tabOptions[0]);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = (direction: 'left' | 'right') => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      const scrollAmount = 192; // Width of a single tab
-      const newPosition = direction === 'left'
-        ? Math.max(scrollPosition - scrollAmount, 0)
-        : Math.min(scrollPosition + scrollAmount, container.scrollWidth - container.clientWidth);
-      setScrollPosition(newPosition);
-      container.scrollTo({ left: newPosition, behavior: 'smooth' });
-    }
-  };
-
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      const showLeftArrow = scrollPosition > 0;
-      const showRightArrow = scrollPosition < container.scrollWidth - container.clientWidth;
-      // You can use these booleans to conditionally render arrows if needed
-    }
-  }, [scrollPosition]);
-
-  const [currentContent, setCurrentContent] = useState<FeatureContentInterface>(featuresContent[0]);
-  useEffect(() => {
-    setCurrentContent(featuresContent.find((item) => item.id === activeTab.id) || featuresContent[0]);
-  }, [activeTab]);
 
   const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    setLoading(true);
-  }, [currentContent]);
-
   return (
     <div>
-      <div className='layout pt-16 md:pt-20 lg:pt-24 xl:pt-28'>
-        <div className='max-w-[680px] mx-auto flex flex-col items-center'>
-          <h2 className='text-slate-950 text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-TT-firs font-bold leading-[1.2] text-center'>
-            Get Discovered by car owners who need you
-          </h2>
-          <p className='text-slate-600 text-center md:text-xl font-medium max-w-[500px] mx-auto mt-4'>
-            Apex Mechanic makes it easy to build a strong online presence and connect with local customers.
-          </p>
+      <div className='layout'>
+        <div className='max-w-[1000px] mx-auto flex flex-col items-center py-12 md:py-16 lg:py-20 xl:py-[100px]'>
+          <motion.h2
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className='text-slate-950 text-3xl md:text-4xl lg:text-5xl xl:text-[56px] font-bold !leading-[1.2] text-center'
+          >
+            Manage Your Auto Shop with Ease and Grow Customer Trust
+          </motion.h2>
         </div>
-        <div className='layout-narrow mt-7 md:mt-9 xl:mt-12 relative'>
-          <div
-            ref={scrollContainerRef}
-            className='w-full overflow-x-auto flex gap-3 relative scrollbar-hide'
-            style={{ scrollBehavior: 'smooth' }}
-          >
-            {tabOptions.map((item) => (
-              <div
-                key={item.id}
-                className={`flex items-center justify-center rounded-lg text-sm md:text-base font-medium py-2 min-w-[160px] md:min-w-[192px] text-center border border-slate-200 transition duration-300 cursor-pointer ${activeTab.id === item.id ? 'bg-primary border-primary text-white' : 'bg-slate-50 text-slate-500'
-                  }`}
-                onClick={() => setActiveTab(item)}
-              >
-                <span dangerouslySetInnerHTML={{ __html: item?.title }} />
-              </div>
-            ))}
-          </div>
-          <button
-            className='absolute left-0 top-0 w-9 md:w-[46px] h-full bg-slate-100 border border-slate-200 flex items-center justify-center rounded-lg'
-            onClick={() => handleScroll('left')}
-            style={{ display: scrollPosition > 0 ? 'flex' : 'none' }}
-          >
-            <FaArrowLeft className='text-primary' />
-          </button>
-          <button
-            className='absolute right-0 top-0 w-9 md:w-[46px] h-full bg-slate-100 border border-slate-200 flex items-center justify-center rounded-lg'
-            onClick={() => handleScroll('right')}
-            style={{ display: scrollPosition < (scrollContainerRef.current?.scrollWidth || 0) - (scrollContainerRef.current?.clientWidth || 0) ? 'flex' : 'none' }}
-          >
-            <FaArrowRight className='text-primary' />
-          </button>
-        </div>
-        <div className='mt-5 md:mt-6 xl:mt-8 border border-slate-200 bg-slate-50 rounded-lg px-5 py-6 md:px-6 lg:px-8 md:py-8 xl:px-[60px] xl:py-10'>
-          <h3 className='text-slate-950 text-lg md:text-xl xl:text-2xl font-semibold !leading-[1.2] text-center px-3'>
-            {currentContent?.title}
-          </h3>
-          <div className='w-full flex flex-col-reverse md:flex-row items-center gap-y-8 gap-x-8 mt-6 md:mt-8 xl:mt-[60px]'>
-            <div className='w-full'>
-              {/* <h3 className='text-slate-950 text-lg md:text-xl xl:text-2xl font-TT-firs font-bold leading-[1.3]'>
-                {currentContent?.title}
-              </h3> */}
-              <ul className='mt-4 md:mt-5 xl:mt-6'>
-                {currentContent?.description.map((item, index) => (
-                  <li key={index} className='text-slate-600 '>
-                    <FaCircleCheck className='text-primary inline mr-3' />
-                    {/* <span className='text-primary font-bold'>{item.title}</span> */}
-                    <span className='inline text-base md:text-lg'>
-                      {item.description}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <p className='text-slate-600 text-base md:text-lg mt-5 md:mt-6'>{currentContent?.conclusion}</p>
-            </div>
-            <div className='w-full border border-slate-200 bg-slate-100 rounded-lg px-5 pt-10 flex justify-center items-end max-h-[483px] relative'>
-              {loading &&
-                <div className='absolute inset-0 flex items-center justify-center h-full w-full bg-slate-100 z-20'>
-                  <AiOutlineLoading3Quarters className='text-slate-500 text-6xl animate-spin' />
+        <div className='flex flex-col gap-6 md:gap-8 xl:gap-10'>
+          {featuresContent.map((item, index) => (
+            <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}            
+            key={index} className='border border-slate-200 bg-slate-50 rounded-lg md:rounded-xl xl:rounded-2xl py-6 md:py-8 xl:py-10 p-5 md:p-8 xl:p-10'>
+              <div className={`w-full flex flex-col-reverse ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-10 md:gap-10 lg:gap-16 xl:gap-20`}>
+                <div className='w-full'>
+                  <h3 className='text-slate-950 text-lg md:text-xl xl:text-2xl font-semibold !leading-[1.16]'>
+                    {item?.title}
+                  </h3>
+                  <ul className='mt-5 md:mt-6 lg:mt-10 xl:mt-[50px] flex flex-col gap-3 lg:gap-4'>
+                    {item?.description.map((item, index) => (
+                      <li key={index} className='flex'>
+                        <div className='min-w-[24px] ]sm:min-w-[32px]'>
+                          <FaCircleCheck className='text-primary-light inline lg:text-lg' />
+                        </div>
+                        <span className='block text-slate-600 text-base lg:text-lg !leading-[1.44]'>
+                          {item.description}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className='text-slate-600 text-base md:text-lg mt-5 md:mt-6'>{item?.conclusion}</p>
                 </div>
-              }
-              <Image
-                src={currentContent?.image}
-                alt={activeTab?.title}
-                width={500}
-                height={500}
-                onLoadingComplete={() => setLoading(false)}
-                className='object-contain w-[96%]'
-              />
-            </div>
-          </div>
+                <div className='w-full border border-slate-200 bg-slate-100 rounded-lg md:rounded-xl pt-10 flex justify-center items-end max-h-[483px] relative'>
+                  {loading &&
+                    <div className='absolute inset-0 flex items-center justify-center h-full w-full bg-slate-100 z-20'>
+                      <AiOutlineLoading3Quarters className='text-slate-500 text-6xl animate-spin' />
+                    </div>
+                  }
+                  <Image
+                    src={item?.image}
+                    alt={item?.title}
+                    width={500}
+                    height={500}
+                    onLoadingComplete={() => setLoading(false)}
+                    className='object-contain w-[96%]'
+                  />
+                </div>
+              </div>
+            </motion.div>
+          ))}
+
         </div>
       </div>
     </div>
