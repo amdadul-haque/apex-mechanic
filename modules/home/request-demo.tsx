@@ -78,10 +78,10 @@ const RequestDemo = (props: Props) => {
                 disabled={email === ''}
               // disabled={firstName === '' || email === '' || phone === '' || shopName === '' || appointmentSystem === '' || howDidYouHear === '' || comments === ''}
               >
-                {isLoading ? 'Sending...' : 'Submit'}
+                {isLoading ? 'Sending...' : 'Request a demo'}
               </button>
             </form>
-            <p className='font-medium'>Get a Question? <Link href="/contact" className='text-primary-lighter'>Contact us</Link></p>
+            <p className='font-medium'>Got a Question? <Link href="/contact" className='text-primary-lighter'>Contact us</Link></p>
           </div>
         </motion.div>
       </div>

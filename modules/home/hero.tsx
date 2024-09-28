@@ -29,8 +29,8 @@ const Hero = (props: Props) => {
           </div>
         </div>
         <div className='w-full md:w-1/2 relative right-0 pl-[10%] md:pl-0'>
-          <Image
-            src='/images/home/hero/hero-right.svg'
+          <img
+            src='/images/home/hero/hero-right.png'
             width={600}
             height={600}
             alt='hero'

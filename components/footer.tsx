@@ -25,13 +25,13 @@ const Footer = (props: Props) => {
             <Button
               secondary
               buttonText='Terms of Service'
-              buttonLink='/'
+              buttonLink='/terms-and-conditions'
               className='text-sm mdt:text-base'
             />
             <Button
               secondary
               buttonText='Privacy Policy'
-              buttonLink='/'
+              buttonLink='/privacy-policy'
               className='text-sm mdt:text-base'
             />
           </div>

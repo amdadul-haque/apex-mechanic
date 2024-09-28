@@ -30,9 +30,9 @@ const Features = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}            
-            key={index} className='border border-slate-200 bg-slate-50 rounded-lg md:rounded-xl xl:rounded-2xl py-6 md:py-8 xl:py-10 p-5 md:p-8 xl:p-10'>
+            key={index} className='border border-slate-200 bg-[#F8FAFC] rounded-lg md:rounded-xl xl:rounded-2xl py-6 md:py-8 xl:py-10 p-5 md:p-8 xl:p-10'>
               <div className={`w-full flex flex-col-reverse ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-10 md:gap-10 lg:gap-16 xl:gap-20`}>
-                <div className='w-full'>
+                <div className='w-full '>
                   <h3 className='text-slate-950 text-lg md:text-xl xl:text-2xl font-semibold !leading-[1.16]'>
                     {item?.title}
                   </h3>

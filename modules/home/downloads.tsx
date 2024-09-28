@@ -26,7 +26,7 @@ const Downlaods = (props: Props) => {
                 className='h-10 w-auto'
               />
               <h4 className='text-xl md:text-2xl xl:text-[28px] font-bold my-3 !leading-none'>Mechanic app built for shop owners</h4>
-              <p className='text-slate-400 text-sm md:text-base !leading-snug'>Manage your shop, create invoices and estimates while staying connected with your customers.</p>
+              <p className='text-slate-400 text-sm md:text-base !leading-snug my-5'>Manage your shop, create invoices and estimates while staying connected with your customers.</p>
               <div className='flex gap-2 mt-6'>
                 <Link href='/' >
                   <Image
@@ -78,7 +78,7 @@ const Downlaods = (props: Props) => {
                 className='h-10 w-auto'
               />
               <h4 className='text-xl md:text-2xl xl:text-[28px] font-bold my-3 !leading-none'>Auto app made for car owners</h4>
-              <p className='text-slate-400 text-sm md:text-base !leading-snug'>Find trusted repair shops, book appointments, and manage your vehicle’s service all in one place.</p>
+              <p className='text-slate-400 text-sm md:text-base !leading-snug my-5'>Find trusted repair shops, book appointments, and manage your vehicle’s service all in one place.</p>
               <div className='flex gap-2 mt-6'>
                 <Link href='/' >
                   <Image
