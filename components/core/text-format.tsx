@@ -53,6 +53,10 @@ const TextFormat = ({title, data}: Props) => {
               </div>
             ))}
           </div>
+          {/* title: table of contents */}
+          <h2 className='text-2xl md:text-3xl font-bold !leading-none'>
+            Table of Contents
+          </h2>
           {data.slice(1).map((term, index) => (
             <Link
               href={`#${term.title.split(' ').join('-').toLowerCase()}`}
@@ -63,17 +67,18 @@ const TextFormat = ({title, data}: Props) => {
             </Link>
           ))}
 
+
           <div className='mt-10 md:mt-12 xl:mt-16 text-base md:text-lg'>
             {data.slice(1).map((term, index) => (
               <div
                 key={index}
-                className='mb-5'
+                className='mb-5 pt-4'
                 id={`${term.title.split(' ').join('-').toLowerCase()}`}
               >
                 <h2 className='text-xl md:text-2xl font-bold !leading-none'>
                   {term.title}
                 </h2>
-                <div className='mt-3'>{formatContent(term.content)}</div>
+                <div className='mt-5'>{formatContent(term.content)}</div>
               </div>
             ))}
           </div>

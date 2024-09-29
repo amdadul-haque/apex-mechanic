@@ -1,6 +1,6 @@
-import { FaFacebookF, FaTelegramPlane } from "react-icons/fa";
-import { FaLinkedinIn, FaInstagram, FaXTwitter, FaTiktok } from "react-icons/fa6";
-import { FeatureContentInterface } from "./models/types";
+import { FeatureContentInterface } from "@/models/types";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaTiktok } from "react-icons/fa6";
 
 export const socials = [
   {
@@ -9,19 +9,11 @@ export const socials = [
   },
   {
     icon: <FaFacebookF />,
-    link: "https://www.facebook.com/profile.php?id=61564662585549"
+    link: "https://www.facebook.com/profile.php?id=61564662585549",
   },
-  // {
-  //   icon: <FaTiktok />,
-  //   link: "https://www.tiktok.com/@apexautoapp"
-  // },
-  // {
-  //   icon: <FaLinkedinIn />,
-  //   link: "/",
-  // },
   {
-    icon: <FaTelegramPlane />,
-    link: "/",
+    icon: <FaTiktok />,
+    link: "https://www.tiktok.com/@apexautoapp",
   },
 ];
 

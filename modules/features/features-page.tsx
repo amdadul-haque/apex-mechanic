@@ -1,5 +1,5 @@
 'use client'
-import { featuresContent } from '@/data';
+import { featuresContent } from '@/constants/data';
 import Image from 'next/image';
 import React, { useState, useRef, useEffect } from 'react'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';

@@ -1,5 +1,5 @@
 'use client'
-import { homepageFeatures as features } from '@/data'
+import { homepageFeatures as features } from '@/constants/data'
 import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from './core'
-import { socials } from '@/data'
+import { socials } from '@/constants/data'
 import Link from 'next/link'
 
 type Props = {}
