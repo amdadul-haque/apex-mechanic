@@ -26,11 +26,11 @@ const Features = () => {
         </div>
         <div className='flex flex-col gap-6 md:gap-8 xl:gap-10'>
           {featuresContent.map((item, index) => (
-            <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}            
-            key={index} className='border border-slate-200 rounded-lg md:rounded-xl xl:rounded-2xl py-6 md:py-8 xl:py-10 p-5 md:p-8 xl:p-10'>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              key={index} className='border border-slate-200 rounded-lg md:rounded-xl xl:rounded-2xl py-6 md:py-8 xl:py-10 p-5 md:p-8 xl:p-10'>
               <div className={`w-full flex flex-col-reverse ${index % 2 == 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-10 md:gap-10 lg:gap-16 xl:gap-20`}>
                 <div className='w-full '>
                   <h3 className='text-slate-950 text-lg md:text-xl xl:text-2xl font-semibold !leading-[1.16]'>
@@ -50,7 +50,7 @@ const Features = () => {
                   </ul>
                   <p className='text-slate-600 text-base md:text-lg mt-5 md:mt-6'>{item?.conclusion}</p>
                 </div>
-                <div className='w-full border border-slate-200 bg-slate-100 rounded-lg md:rounded-xl pt-10 flex justify-center items-end max-h-[483px] relative'>
+                <div className={`w-full  rounded-lg md:rounded-xl pt-10 flex justify-center items-end max-h-[483px] relative ${index == 1 ? '' : 'border border-slate-200 bg-slate-100'}`}>
                   {loading &&
                     <div className='absolute inset-0 flex items-center justify-center h-full w-full bg-slate-100 z-20'>
                       <AiOutlineLoading3Quarters className='text-slate-500 text-6xl animate-spin' />
@@ -62,7 +62,7 @@ const Features = () => {
                     width={500}
                     height={500}
                     onLoadingComplete={() => setLoading(false)}
-                    className='object-contain w-[96%]'
+                    className={`object-contain ${index === 0 ? 'h-[90%]' : index == 1 ? 'w-full' : ' w-[96%]'}`}
                   />
                 </div>
               </div>

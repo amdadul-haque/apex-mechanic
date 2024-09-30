@@ -61,16 +61,12 @@ const RequestDemo = (props: Props) => {
             <form onSubmit={handleSubmit} className='w-full mt-5 mb-4 flex justify-between relative'>
               <input
                 type='email'
-                placeholder='Enter your email *'
+                placeholder='Your email address...'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className='w-full block py-3 px-5 border border-slate-200 rounded-full focus:outline-none focus:border-primary/80 transition duration-300'
+                className='w-full block py-3 px-5 border border-slate-200 rounded-full focus:outline-none focus:border-primary/80 transition duration-300 placeholder:text-slate-700 font-medium'
                 required
               />
-              {/* <Button
-                buttonText='Request a Demo'
-                className='absolute bg-primary-lighter whitespace-nowrap border-none flex items-center h-full right-0'
-              /> */}
               <button
                 className='primary-btn disabled:opacity-80 disabled:cursor-not-allowed absolute bg-primary-lighter whitespace-nowrap border-none flex items-center h-full right-0'
                 // onClick={handleSubmit}

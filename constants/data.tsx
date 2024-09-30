@@ -159,7 +159,7 @@ export const featuresContent: FeatureContentInterface[] = [
   {
     id: 1,
     title: "Create, manage and reschedule appointments  with automated emails sent to customers.",
-    image: "/images/features/1.png",
+    image: "/images/features/1.svg",
     description: [
       {
         title: "",

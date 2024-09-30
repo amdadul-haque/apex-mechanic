@@ -53,6 +53,7 @@ const Navbar = (props: Props) => {
             buttonText='Request free demo'
             buttonLink='/contact'
             className='tracking-wide'
+            isHomePage={isHomePage}
           />
           <button
             className={`md:hidden ${isHomePage ? 'text-white' : 'text-slate-500'}`}
@@ -79,6 +80,7 @@ const Navbar = (props: Props) => {
             <Button
               buttonText='Request free demo'
               buttonLink='/contact'
+              isHomePage={isHomePage}
             />
           </li>
         </ul>

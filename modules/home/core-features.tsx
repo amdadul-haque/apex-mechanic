@@ -28,7 +28,7 @@ const coreFeatures = [
   },
   {
     icon: '/images/home/core-features/6.png',
-    description: 'Convert online leads into loyal customers.',
+    description: 'Manage your shop’s workflow from your computer or phone. ',
   },
 ]
 
